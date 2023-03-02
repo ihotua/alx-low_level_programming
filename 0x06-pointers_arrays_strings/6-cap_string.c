@@ -6,16 +6,33 @@
  * Return: A pointer to the changed string.
  */
 
-char *string_toupper(char *str)
+char *cap_string(char *str)
 {
-	int i = 0;
-	while (str[i] != '\0')
+	int index = 0;
+
+	while (str[index])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] = str[i] - 'a' + 'A';
+		while (!(str[index] >= 'a' && str[index] <= 'z'))
+			index++;
+
+		if (str[index - 1] == ' ' ||
+		    str[index - 1] == '\t' ||
+		    str[index - 1] == '\n' ||
+		    str[index - 1] == ',' ||
+		    str[index - 1] == ';' ||
+		    str[index - 1] == '.' ||
+		    str[index - 1] == '!' ||
+		    str[index - 1] == '?' ||
+		    str[index - 1] == '"' ||
+		    str[index - 1] == '(' ||
+		    str[index - 1] == ')' ||
+		    str[index - 1] == '{' ||
+		    str[index - 1] == '}' ||
+		    index == 0)
+			str[index] -= 32;
+
+		index++;
 	}
-	i++;
-	}
+
 	return (str);
 }
