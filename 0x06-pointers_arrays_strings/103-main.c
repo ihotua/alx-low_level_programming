@@ -41,9 +41,8 @@ int main(void)
 	res = infinite_add(n, m, r2, 10);
 	if (res == 0)
 	{
-		printf("Error\n")
-	}
-	else
+		printf("Error\n");
+	} else
 	{
 		printf("%s + %s = %s\n", n, m, res);
 	}
