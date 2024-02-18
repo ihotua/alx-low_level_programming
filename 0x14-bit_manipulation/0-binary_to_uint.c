@@ -19,7 +19,6 @@ unsigned int binary_to_uint(const char *b)
 
 	while (b[c] != '\0')
 		c++;
-	
 	c--;
 
 	for (; c >= 0; c--)
@@ -32,5 +31,5 @@ unsigned int binary_to_uint(const char *b)
 		}
 		k *= 2;
 	}
-	return i;
+	return (i);
 }
