@@ -17,3 +17,12 @@ void print_binary(unsigned long int n)
 		mask >>= 1;
 	}
 }
+
+int main()
+{
+	print_binary(0);
+	putchar('\n');
+	print_binary(1);
+	putchar('\n');
+	return (0);
+}
