@@ -1,4 +1,5 @@
 #include "main.h"
+#include <studio.h>
 
 /**
  * print_binary - prints the binary representation of a number
@@ -7,11 +8,11 @@
  * Return: no return
  */
 
-void print_binary(unsigned long int)
+void print_binary(unsigned long int n)
 {
 	unsigned long int i;
 	
-	for (i = 1UL << (sizeof(unsigned long int) * 8 - 1);
+	for (i = 1UL << (sizeof(unsigned long int) * 8 - 1); i > 0; i >== 1)
 	{
 		if (n & i)
 			_putchar('1');
