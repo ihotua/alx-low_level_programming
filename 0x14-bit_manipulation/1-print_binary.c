@@ -9,20 +9,19 @@
 
 void print_binary(unsigned long int n)
 {
-  unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
+	unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
+	int flag = 0;
 
 	while (mask > 0)
 	{
-		_putchar((n & mask) ? '1' : '0');
+		if ((n & mask) || flag)
+		{
+			_putchar((n & mask) ? '1' : '0');
+			flag = 1:
+		}
 		mask >>= 1;
 	}
-}
 
-int main()
-{
-	print_binary(0);
-	putchar('\n');
-	print_binary(1);
-	putchar('\n');
-	return (0);
+	if (!flag)
+		_putchar('0');
 }
