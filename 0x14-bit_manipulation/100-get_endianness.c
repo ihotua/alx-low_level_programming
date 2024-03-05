@@ -11,5 +11,4 @@ int get_endianness(void)
 	unsigned alex = 1;
 	char *cat = (char *)&alex;
 	return (*cat == 1);
-	
 }
