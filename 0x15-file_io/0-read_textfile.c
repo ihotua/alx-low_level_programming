@@ -17,25 +17,25 @@ ssize_t read_textfile(const char *filename, size_t letters)
     ssize_t bytes_read, bytes_written;
 
     if (filename == NULL)
-        return (0);
+	    return (0);
 
     file = fopen(filename, "r");
     if (file == NULL)
-        return (0);
+	    return (0);
 
     buffer = malloc(sizeof(char) * letters);
     if (buffer == NULL)
     {
-        fclose(file);
-        return (0);
+	fclose(file);
+	return (0);
     }
-
+    
     bytes_read = fread(buffer, sizeof(char), letters, file);
     if (bytes_read == 0)
     {
-        free(buffer);
-        fclose(file);
-        return (0);
+	free(buffer);
+	fclose(file);
+	return (0);
     }
 
     bytes_written = fwrite(buffer, sizeof(char), bytes_read, stderr);
