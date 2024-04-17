@@ -40,7 +40,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	bytes_written = fwrite(buffer, sizeof(char), bytes_read, stdout);
+	bytes_written = write(STDERR_FILENO, buffer, 
+			sizeof(char), bytes_read);
 	free(buffer);
 	fclose(file);
 
