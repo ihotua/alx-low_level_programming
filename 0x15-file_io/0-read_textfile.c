@@ -1,5 +1,8 @@
 #include "main.h"
-#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <stdlib.h>
 
 /**
@@ -38,7 +41,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
         return 0;
     }
 
-    bytes_written = fwrite(buffer, sizeof(char), bytes_read, stderr);
+    bytes_written = fwrite(buffer, sizeof(char), bytes_read);
     free(buffer);
     fclose(file);
 
