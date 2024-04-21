@@ -32,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	ssize_t bytes_read = fread(buffer, sizeof(char), letters, file);
+	bytes_read = fread(buffer, sizeof(char), letters, file);
 	if (bytes_read == 0)
 	{
 		free(buffer);
@@ -40,12 +40,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	ssize_t bytes_written = fwrite(buffer, sizeof(char), bytes_read, stdout);
+	bytes_written = fwrite(buffer, sizeof(char), bytes_read, stdout);
 	free(buffer);
 	fclose(file);
 
 	if (bytes_written != bytes_read)
 		return (0);
 
-	return (bytes_written);
+	return (bytes_read);
 }
