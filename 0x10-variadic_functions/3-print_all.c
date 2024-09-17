@@ -23,6 +23,9 @@ void print_all(const char * const format, ...)
 				|| current_format == 'f' || current_format == 's')
 		{
 			printf("%s", separator);
+			separator = ",";
+
+
 			switch (current_format)
 			{
 				case 'c':
@@ -46,8 +49,8 @@ void print_all(const char * const format, ...)
 					}
 					break;
 			}
-			separator = ", ";
 		}
+		
 		i++;
 	}
 	
